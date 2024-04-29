@@ -1,15 +1,33 @@
-<p>
-  cafe-list works!
-</p>
-
+<div class="h2">El Aroma magico</div>
+<img class="image" alt="bimtrazer-logo" src="assets/images/cafes.png"/>
 <div class="container-fluid">
-  <div class="row">
-      <div class="col mb-2" *ngFor="let cafe of cafes">
-         {{cafe.nombre}}
-      </div>
+  <div class="col-6">
+    <table class="table" id="vehiculosTable">
+      <thead class="table-dark">
+        <tr>
+          <th scope="h5">#</th>
+          <th scope="h5">Nombre</th>
+          <th scope="h5">Tipo</th>
+          <th scope="h5">Region</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of cafes" class="col mb-2">
+          <th scope="row">{{ c.id }}</th>
+          <td>
+            {{ c.nombre }}
+          </td>
+          <td>
+            {{ c.tipo }}
+          </td>
+          <td>
+            {{ c.region }}
+          </td>
+      </tbody>
+    </table>
   </div>
 </div>
-
 <p>
-  Hola!
+  Contact us: +57 3102105253 - @elaromamagico.com - @elaromamagico
 </p>
+

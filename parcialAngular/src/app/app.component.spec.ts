@@ -1,16 +1,14 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { CafeListComponent } from './cafe/cafe-list/cafe-list.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+    await TestBed.configureTestingModule({      
+      imports: [RouterTestingModule, HttpClientModule],
+      declarations: [AppComponent, CafeListComponent],
     }).compileComponents();
   });
 
@@ -26,10 +24,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('parcialAngular');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('parcialAngular app is running!');
-  });
 });
