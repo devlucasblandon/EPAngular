@@ -7,6 +7,7 @@ export class Cafe {
     sabor: string;
     altura: number;
     imagen: string;
+  static tipo: string;
 
 
     public constructor(id: number, nombre: string, tipo: string, region: string, sabor: string, altura: number, imagen: string)  {

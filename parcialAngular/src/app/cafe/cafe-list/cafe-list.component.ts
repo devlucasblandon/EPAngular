@@ -18,6 +18,27 @@ export class CafeListComponent implements OnInit {
     });
   }
 
+  calculateTotalOrigen(): number {
+    let i = 0;
+    for (const cafe of this.cafes) {
+      if(cafe.tipo == 'Café de Origen') {  
+        i++;
+      };
+    }
+    return i;
+  }
+
+
+  calculateTotalBlend(): number {
+    let i = 0;
+    for (const cafe of this.cafes) {
+      if(cafe.tipo == 'Blend') {  
+        i++;
+      };
+    }
+    return i;
+  }
+
   ngOnInit(): void {
     this.getCafes();
   }

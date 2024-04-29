@@ -52,7 +52,13 @@ describe('CafeListComponent', () => {
     expect(debug.query(By.css("tbody")).childNodes.length).toBeGreaterThan(0);
   });
 
-  it('should have 3 <div.col.mb-2> elements', () => {
-    expect(debug.queryAll(By.css('div.col.mb-2'))).toHaveSize(3)
+  it('should render table headers', () => {
+    const headerElements = fixture.nativeElement.querySelectorAll('thead th');
+    expect(headerElements.length).toBe(4); // Expect 4 headers (including '#')
+  });
+
+  it('should render table data', () => {
+    const dataElements = fixture.nativeElement.querySelectorAll('tbody tr');
+    expect(dataElements.length).toBe(3); // Expect 3 rows of data
   });
 });
